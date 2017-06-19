@@ -6,10 +6,10 @@ Emoticons and Emoji data dictonary
 """
 
 
-__all__ = ['EMO_UNICODE', 'UNICODE_EMO']
+__all__ = ['EMO_UNICODE', 'UNICODE_EMO', 'EMOTICONS']
 
 
-emoticons = {
+EMOTICONS = {
 u":‑\)":"Happy face or smiley",
 u":\)":"Happy face or smiley",
 u":-\]":"Happy face or smiley",
@@ -2528,4 +2528,4 @@ EMO_UNICODE = {
     u':Åland_Islands:': u'\U0001F1E6 \U0001F1FD',
 }
 
-UNICODE_EMO = {v: k for k, v in EMOJI_UNICODE.items()}
+UNICODE_EMO = {v: k for k, v in EMO_UNICODE.items()}
