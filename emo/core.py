@@ -27,10 +27,14 @@ def emoticons(string):
         })
     return __entities
 
-
-if __name__=="__main__":
+def main():
     test = "I love it, 👨 :-) 🏁:-) :-)🏁 :-) 🏁"
     print(emoji(test))
     print(emoticons(test))
     print(test[27:30])
     print(test[17])
+
+    return None
+
+if __name__=="__main__":
+    main()
