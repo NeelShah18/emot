@@ -1,5 +1,6 @@
 import re
-import emo.emo_unicode
+from emo import emo_unicode
+
 '''emo library to detect emoji and emoticons.
 
     >>> import emo
@@ -47,11 +48,3 @@ def test_emo():
     print(emoji(test))
     print(emoticons(test))
     return None
-
-def main():
-    test_emo()
-    return None
-
-if __name__=="__main__":
-    #main()
-    None
