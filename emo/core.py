@@ -1,11 +1,24 @@
-import logging
 import re
-import emo_unicode
-#import emo
+import emo.emo_unicode
+'''emo library to detect emoji and emoticons.
+
+    >>> import emo
+    >>> text = "I love python 👨 :-)"
+    >>> emoji(text)
+    >>> [{'value': '👨', 'str_span': [10, 10]}]
+    >>> emoticons(text)
+    >>> [{'value': ':-)', 'str_span': [12, 15]}]
+'''
 
 __all__ = ['emoji','emoticons']
 
 def emoji(string):
+    '''emo.emoji is use to detect emoji from text
+
+        >>> text = "I love python 👨 :-)"
+        >>> emoji(text)
+        >>> [{'value': '👨', 'str_span': [10, 10]}]
+    '''
     __entities = []
     pro_string = str(string)
     for pos,ej in enumerate(pro_string):
@@ -17,6 +30,8 @@ def emoji(string):
     return __entities
 
 def emoticons(string):
+    '''
+    '''
     __entities = []
     pattern = u'(' + u'|'.join(k for k in emo_unicode.EMOTICONS) + u')'
     __entities = []
@@ -27,14 +42,16 @@ def emoticons(string):
         })
     return __entities
 
-def main():
-    test = "I love it, 👨 :-) 🏁:-) :-)🏁 :-) 🏁"
+def test_emo():
+    test = "I love it 👨 :-)"
     print(emoji(test))
     print(emoticons(test))
-    print(test[27:30])
-    print(test[17])
+    return None
 
+def main():
+    test_emo()
     return None
 
 if __name__=="__main__":
-    main()
+    #main()
+    None

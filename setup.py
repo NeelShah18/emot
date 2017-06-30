@@ -18,8 +18,8 @@ with open('README.rst', encoding='utf-8') as f:
 
 setup(
     name='emo',
-    author='Neel Shah',
-    author_email='neelknightme@gmail.com',
+    author='Neel Shah, Subham',
+    author_email='neelknightme@gmail.com, kaka.shubham@gmail.com',
     classifiers=[
         'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
@@ -52,10 +52,10 @@ setup(
         ]
     },
     include_package_data=True,
-    license="New MIT",
+    license="GNU GENERAL PUBLIC LICENSE",
     long_description=readme_content,
     packages=['emo'],
-    url="",
+    url="https://github.com/NeelShah18/emo",
     version="V1.0",
     zip_safe=True,
 )
