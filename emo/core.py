@@ -31,7 +31,11 @@ def emoji(string):
     return __entities
 
 def emoticons(string):
-    '''
+    '''emo.emoticons is use to detect emoticons from text
+
+        >>> text = "I love python 👨 :-)"
+        >>> emoticons(text)
+        >>> [{'value': ':-)', 'str_span': [12, 15]}]
     '''
     __entities = []
     pattern = u'(' + u'|'.join(k for k in emo_unicode.EMOTICONS) + u')'
@@ -44,7 +48,7 @@ def emoticons(string):
     return __entities
 
 def test_emo():
-    test = "I love it 👨 :-)"
+    test = "I love python 👨 :-)"
     print(emoji(test))
     print(emoticons(test))
     return None
