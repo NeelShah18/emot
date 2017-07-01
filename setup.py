@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 
-
 """
 Setup script for emot
 """
