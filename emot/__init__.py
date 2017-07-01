@@ -11,16 +11,16 @@ emo terminal output for Python.
 
 """
 
-from emo.core import emoji
-from emo.core import emoticons
-from emo.emo_unicode import EMO_UNICODE
-from emo.emo_unicode import UNICODE_EMO
-from emo.emo_unicode import EMOTICONS
+from emot.core import emoji
+from emot.core import emoticons
+from emot.emo_unicode import EMO_UNICODE
+from emot.emo_unicode import UNICODE_EMO
+from emot.emo_unicode import EMOTICONS
 
 __version__ = '0.0.1'
 __author__ = 'Neel Shah and Shubham'
 __email__ = 'neelknightme@gmail.com and kaka.shubham@gmail.com'
-__source__ = 'https://github.com/NeelShah18/emo'
+__source__ = 'https://github.com/NeelShah18/emot'
 __license__ = '''
 
     GNU GENERAL PUBLIC LICENSE

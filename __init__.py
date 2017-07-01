@@ -1,1 +1,1 @@
-import emo
+import emot

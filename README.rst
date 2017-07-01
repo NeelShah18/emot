@@ -1,7 +1,7 @@
-emo
+emot
 =====
 
-emo is python library to extract emoji and emoticons from text(string)
+emot is python library to extract emoji and emoticons from text(string)
 
 
 Compatibility
@@ -13,19 +13,19 @@ It works fine in any Python 2.xx and 3.xx
 Example
 -------
 
-The entire set of Emoji codes as defined by the `unicode consortium <http://www.unicode.org/Public/emoji/1.0/full-emoji-list.html>`__
-is supported in addition to a bunch of `aliases <http://www.emoji-cheat-sheet.com/>`__.  By
-default only the official list is enabled but doing ``emoji.emojize(use_aliases=True)`` enables
-both the full list and aliases.
+emot library take string as input and return list of dictonary. You can assess it each dictonary by looping it. And their two valuses in dictonary 'value' and 'str_span'.
+value = emoji or emoticaons
+str_span = starting and ending point of emoji or emoticons
+
 
 .. code-block:: python
 
-    >> import emoji
-    >> print(emoji.emojize('Python is :thumbs_up_sign:'))
-    Python is 👍
-    >> print(emoji.emojize('Python is :thumbsup:', use_aliases=True))
-    Python is 👍
-
+    >>> import emot
+    >>> text = "I love python 👨 :-)"
+    >>> emot.emoji(text)
+    >>> [{'value': '👨', 'str_span': [10, 10]}]
+    >>> emot.emoticons(text)
+    >>> [{'value': ':-)', 'str_span': [12, 15]}]
 
 Installation
 ------------
@@ -34,14 +34,14 @@ Via pip:
 
 .. code-block:: console
 
-    $ pip install emoji --upgrade
+    $ pip install emot --upgrade
 
 From master branch:
 
 .. code-block:: console
 
-    $ git clone https://github.com/carpedm20/emoji.git
-    $ cd emoji
+    $ git clone https://github.com/NeelShah18/emo.git
+    $ cd emot
     $ python setup.py install
 
 
@@ -50,16 +50,9 @@ Developing
 
 .. code-block:: console
 
-    $ git clone https://github.com/carpedm20/emoji.git
-    $ cd emoji
+    $ git clone https://github.com/NeelShah18/emo.git
+    $ cd emot
     $ pip install -e .\[dev\]
-    $ nosetests
-
-The ``utils/get-codes-from-unicode-consortium.py`` may help when updating
-``unicode_codes.py`` but is not guaranteed to work.  Generally speaking it
-scrapes a table on the Unicode Consortium's website with
-`BeautifulSoup <http://www.crummy.com/software/BeautifulSoup/>`_ and prints the
-contents to ``stdout`` in a more useful format.
 
 
 Link
@@ -69,10 +62,11 @@ Link
 
 `Official unicode list <http://www.unicode.org/Public/emoji/1.0/full-emoji-list.html>`__
 
+`official emoticons list <https://en.wikipedia.org/wiki/List_of_emoticons>`__
 
 Authors
 -------
 
-Taehoon Kim / `@carpedm20 <http://carpedm20.github.io/about/>`__
+Neel Shah / `@NeelShah18 <https://github.com/NeelShah18>`__
 
-Kevin Wurster / `@geowurster <http://twitter.com/geowurster/>`__
+Shubham / `@kakashubham <https://github.com/kakashubham>`__

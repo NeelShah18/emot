@@ -1,13 +1,13 @@
 import re
-from emo import emo_unicode
+from emot import emo_unicode
 
 '''emo library to detect emoji and emoticons.
 
-    >>> import emo
+    >>> import emot
     >>> text = "I love python 👨 :-)"
-    >>> emoji(text)
+    >>> emot.emoji(text)
     >>> [{'value': '👨', 'str_span': [10, 10]}]
-    >>> emoticons(text)
+    >>> emot.emoticons(text)
     >>> [{'value': ':-)', 'str_span': [12, 15]}]
 '''
 

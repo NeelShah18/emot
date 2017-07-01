@@ -2,21 +2,21 @@
 
 
 """
-Setup script for emo
+Setup script for emot
 """
 from setuptools import setup
 
 setup(
-    name='emo',
+    name='emot',
     version="1.0",
     author='Neel Shah, Subham',
     author_email='neelknightme@gmail.com, kaka.shubham@gmail.com',
-    py_modules=['emo'],
+    py_modules=['emot'],
     description="Emoji and Emoticons detection package for Python",
     keywords=['emoji, emoticons'],
     include_package_data=True,
     license="GNU GENERAL PUBLIC LICENSE",
-    packages=['emo'],
+    packages=['emot'],
     url="https://github.com/NeelShah18/emo",
     zip_safe=True,
 )
