@@ -1,5 +1,6 @@
 import re
 from emot import emo_unicode
+#import emo_unicode
 
 '''emot library to detect emoji and emoticons.
 
@@ -31,7 +32,7 @@ def emoji(string):
     return __entities
 
 def emoticons(string):
-    '''emo.emoticons is use to detect emoticons from text
+    '''emot.emoticons is use to detect emoticons from text
 
         >>> text = "I love python 👨 :-)"
         >>> emot.emoticons(text)
