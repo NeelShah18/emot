@@ -1,19 +1,22 @@
-emot
-=====
+Description of the emot library
+===============================
 
-emot is a python library to extract emoji and emoticons from text(string). All the emojis and emoticons are taken from a reliable source i.e. Wikipedia.org.
+Emot is a python library to extract the emojis and emoticons from a text(string). All the emojis and emoticons are taken from a reliable source i.e. Wikipedia.org.
 
 
 Compatibility
+-------------
+
+It works fine in any Python 2.xx and 3.xx.
+
+
+Working
 -------
 
-It works fine in any Python 2.xx and 3.xx
-
+The Emot library takes a string as an  input and returns a list of dictonary.
 
 Example
 -------
-
-emot library takes a string as an  input and returns a list of dictonary.
 
 .. code-block:: python
 
@@ -24,8 +27,7 @@ emot library takes a string as an  input and returns a list of dictonary.
     >>> emot.emoticons(text)
     >>> [{'value': ':-)', 'location': [12, 15]}]
 
-You can loop them as below. Their are two things in each dictonary 1) Value - emoji or emoticons and 2) location - starting and ending
-of the emoji and emoticons. Below is the example how you can loop it.
+You can loop them as shown below. There are two details in each dictonary (1) Value - Emoji or Emoticons and (2) Location - starting position and the ending position of the emoji and emoticons. Below is the example showing how you can loop it.
 
 .. code-block:: python
 
@@ -73,8 +75,8 @@ Developing
     $ pip install -e .\[dev\]
 
 
-Link
-----
+Links
+-----
 
 `Emoji Cheat Sheet <http://www.emoji-cheat-sheet.com/>`__
 
