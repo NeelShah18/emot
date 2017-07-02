@@ -23,9 +23,9 @@ str_span = starting and ending point of emoji or emoticons
     >>> import emot
     >>> text = "I love python 👨 :-)"
     >>> emot.emoji(text)
-    >>> [{'value': '👨', 'str_span': [10, 10]}]
+    >>> [{'value': '👨', 'location': [10, 10]}]
     >>> emot.emoticons(text)
-    >>> [{'value': ':-)', 'str_span': [12, 15]}]
+    >>> [{'value': ':-)', 'location': [12, 15]}]
 
 Installation
 ------------

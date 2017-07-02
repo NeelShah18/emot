@@ -2,12 +2,12 @@
 
 
 """
-emo package for Python
+emot package for Python
 ~~~~~~~~~~~~~~~~
 
-emo terminal output for Python.
+emot terminal output for Python.
 
-    >>> import emo
+    >>> import emot
 
 """
 

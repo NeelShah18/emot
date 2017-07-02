@@ -1,24 +1,24 @@
 import re
 from emot import emo_unicode
 
-'''emo library to detect emoji and emoticons.
+'''emot library to detect emoji and emoticons.
 
     >>> import emot
     >>> text = "I love python 👨 :-)"
     >>> emot.emoji(text)
-    >>> [{'value': '👨', 'str_span': [10, 10]}]
+    >>> [{'value': '👨', 'location': [10, 10]}]
     >>> emot.emoticons(text)
-    >>> [{'value': ':-)', 'str_span': [12, 15]}]
+    >>> [{'value': ':-)', 'location': [12, 15]}]
 '''
 
 __all__ = ['emoji','emoticons']
 
 def emoji(string):
-    '''emo.emoji is use to detect emoji from text
+    '''emot.emoji is use to detect emoji from text
 
         >>> text = "I love python 👨 :-)"
-        >>> emoji(text)
-        >>> [{'value': '👨', 'str_span': [10, 10]}]
+        >>> emot.emoji(text)
+        >>> [{'value': '👨', 'location': [10, 10]}]
     '''
     __entities = []
     pro_string = str(string)
@@ -26,7 +26,7 @@ def emoji(string):
         if ej in emo_unicode.UNICODE_EMO:
             __entities.append({
                 "value": ej,
-                "str_span": [pos,pos]
+                "location": [pos,pos]
                 })
     return __entities
 
@@ -34,8 +34,8 @@ def emoticons(string):
     '''emo.emoticons is use to detect emoticons from text
 
         >>> text = "I love python 👨 :-)"
-        >>> emoticons(text)
-        >>> [{'value': ':-)', 'str_span': [12, 15]}]
+        >>> emot.emoticons(text)
+        >>> [{'value': ':-)', 'location': [12, 15]}]
     '''
     __entities = []
     pattern = u'(' + u'|'.join(k for k in emo_unicode.EMOTICONS) + u')'
@@ -43,7 +43,7 @@ def emoticons(string):
     matches = re.finditer(r"%s"%pattern,str(string),re.IGNORECASE)
     for et in matches:
         __entities.append({'value': et.group().strip(),
-        'str_span': [et.start(),et.end()]
+        'location': [et.start(),et.end()]
         })
     return __entities
 
@@ -52,3 +52,7 @@ def test_emo():
     print(emoji(test))
     print(emoticons(test))
     return None
+
+def about():
+    text = "emot library: emoji and emoticons library for python. It return emoji or emoticons from string with location of it. \nAuthors: \n Neel Shah: neelknightme@gmail.com or https://github.com/NeelShah18 \n Subham Rohilla: kaka.shubham@gmail.com or https://github.com/kakashubham"
+    print()
