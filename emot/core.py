@@ -55,4 +55,5 @@ def test_emo():
 
 def about():
     text = "emot library: emoji and emoticons library for python. It return emoji or emoticons from string with location of it. \nAuthors: \n Neel Shah: neelknightme@gmail.com or https://github.com/NeelShah18 \n Subham Rohilla: kaka.shubham@gmail.com or https://github.com/kakashubham"
-    print()
+    print(text)
+    return None
