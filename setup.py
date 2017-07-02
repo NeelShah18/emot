@@ -10,7 +10,6 @@ setup(
     version="1.0",
     author='Neel Shah, Subham',
     author_email='neelknightme@gmail.com, kaka.shubham@gmail.com',
-    py_modules=['emot'],
     description="Emoji and Emoticons detection package for Python",
     keywords=['emoji, emoticons'],
     include_package_data=True,
