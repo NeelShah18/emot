@@ -1,7 +1,7 @@
 emot
 =====
 
-emot is python library to extract emoji and emoticons from text(string)
+emot is a python library to extract emoji and emoticons from text(string). All the emojis and emoticons are taken from a reliable source i.e. Wikipedia.org. 
 
 
 Compatibility
@@ -13,8 +13,8 @@ It works fine in any Python 2.xx and 3.xx
 Example
 -------
 
-emot library take string as input and return list of dictonary. You can assess it each dictonary by looping it. And their two valuses in dictonary 'value' and 'str_span'.
-value = emoji or emoticaons
+emot library takes a string as an  input and returns a list of dictonary. You can access each dictonary by looping it. And there are  two values in the  dictonary 'value' and 'str_span'.
+value = emoji or emoticons
 str_span = starting and ending point of emoji or emoticons
 
 
@@ -69,4 +69,4 @@ Authors
 
 Neel Shah / `@NeelShah18 <https://github.com/NeelShah18>`__
 
-Shubham / `@kakashubham <https://github.com/kakashubham>`__
+Shubham Rohilla / `@kakashubham <https://github.com/kakashubham>`__
