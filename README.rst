@@ -72,7 +72,6 @@ Developing
 
     $ git clone https://github.com/NeelShah18/emot.git
     $ cd emot
-    $ pip install -e .\[dev\]
 
 
 Links
