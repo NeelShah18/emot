@@ -1,8 +1,3 @@
-.. image:: https://img.shields.io/pypi/v/nine.svg   :target: https://pypi.python.org/pypi/emot
-.. image:: https://img.shields.io/pypi/status/Django.svg   :target: https://pypi.python.org/pypi/emot
-.. image:: https://img.shields.io/aur/license/yaourt.svg   :target: https://www.gnu.org/licenses/gpl-3.0.en.html
-
-
 Description of the emot library
 ===============================
 
