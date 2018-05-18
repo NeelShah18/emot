@@ -1,4 +1,4 @@
-import emot as emo
+import core as emo
 import cProfile
 
 def test_emo():

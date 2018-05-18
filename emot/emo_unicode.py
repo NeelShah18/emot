@@ -227,7 +227,8 @@ EMOTICONS = {
     u"\(o\.o\)":"Surprised",
     u"oO":"Surprised",
     u"\(\*￣m￣\)":"Dissatisfied",
-    u"\(‘A`\)":"Snubbed or Deflated"
+    u"\(‘A`\)":"Snubbed or Deflated",
+    u"<3":"Love",
 }
 
 EMO_UNICODE = {

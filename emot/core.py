@@ -1,6 +1,6 @@
 import re
-from emot import emo_unicode
-#import emo_unicode
+#from emot import emo_unicode
+import emo_unicode
 
 '''emot library to detect emoji and emoticons.
 
