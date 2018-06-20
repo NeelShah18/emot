@@ -1,3 +1,6 @@
+[![Downloads](http://pepy.tech/badge/emot)](http://pepy.tech/project/emot)
+
+
 Description of the emot library
 ===============================
 
