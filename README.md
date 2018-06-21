@@ -1,23 +1,25 @@
+[![Downloads](http://pepy.tech/badge/emot)](http://pepy.tech/project/emot)
+
 Description of the emot library
 ===============================
 
-Emot is a python library to extract the emojis and emoticons from a text(string). All the emojis and emoticons are taken from a reliable source i.e. Wikipedia.org.
+Emot is a python library to extract the emojis and emoticons from a
+text(string). All the emojis and emoticons are taken from a reliable
+source i.e. Wikipedia.org.
 
 Compatibility
 -------------
 
 It works fine in any Python 2.xx and 3.xx.
 
-
 Working
 -------
 
-The Emot library takes a string as an  input and returns a list of dictonary.
+The Emot library takes a string as an input and returns a list of
+dictonary.
 
 Example
 -------
-
-.. code-block:: python
 
     >>> import emot
     >>> text = "I love python 👨 :-)"
@@ -26,9 +28,10 @@ Example
     >>> emot.emoticons(text)
     >>> [{'value': ':-)', 'location': [12, 15]}]
 
-You can loop them as shown below. There are two details in each dictonary (1) Value - Emoji or Emoticons and (2) Location - starting position and the ending position of the emoji and emoticons. Below is the example showing how you can loop it.
-
-.. code-block:: python
+You can loop them as shown below. There are two details in each
+dictonary (1) Value - Emoji or Emoticons and (2) Location - starting
+position and the ending position of the emoji and emoticons. Below is
+the example showing how you can loop it.
 
     >>> text = "I love python 👨 :-) :) "
     >>> emot.emoticons(text)
@@ -45,46 +48,43 @@ You can loop them as shown below. There are two details in each dictonary (1) Va
     starting point:  20
     ending point:  22
 
-
 Installation
 ------------
 
 Via pip:
 
-.. code-block:: console
-
     $ pip install emot --upgrade
 
 From master branch:
-
-.. code-block:: console
 
     $ git clone https://github.com/NeelShah18/emot.git
     $ cd emot
     $ python setup.py install
 
-
 Developing
 ----------
-
-.. code-block:: console
 
     $ git clone https://github.com/NeelShah18/emot.git
     $ cd emot
 
-
 Links
 -----
 
-`Emoji Cheat Sheet <http://www.emoji-cheat-sheet.com/>`__
+[Emoji Cheat Sheet]
 
-`Official unicode list <http://www.unicode.org/Public/emoji/1.0/full-emoji-list.html>`__
+[Official unicode list]
 
-`official emoticons list <https://en.wikipedia.org/wiki/List_of_emoticons>`__
+[official emoticons list]
 
 Authors
 -------
 
-Neel Shah / `@NeelShah18 <https://github.com/NeelShah18>`__
+Neel Shah / [@NeelShah18]
 
-Shubham Rohilla / `@kakashubham <https://github.com/kakashubham>`__
+Shubham Rohilla / [@kakashubham]
+
+  [Emoji Cheat Sheet]: http://www.emoji-cheat-sheet.com/
+  [Official unicode list]: http://www.unicode.org/Public/emoji/1.0/full-emoji-list.html
+  [official emoticons list]: https://en.wikipedia.org/wiki/List_of_emoticons
+  [@NeelShah18]: https://github.com/NeelShah18
+  [@kakashubham]: https://github.com/kakashubham
