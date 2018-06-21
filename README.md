@@ -24,30 +24,26 @@ Example
     >>> import emot
     >>> text = "I love python 👨 :-)"
     >>> emot.emoji(text)
-    >>> [{'value': '👨', 'location': [10, 10]}]
+    >>> [{'value': '👨', 'mean': ':man:', 'location': [14, 14], 'flag': True}]
     >>> emot.emoticons(text)
-    >>> [{'value': ':-)', 'location': [12, 15]}]
+    >>> {'value': [':-)'], 'location': [[16, 19]], 'mean': ['Happy face smiley'], 'flag': True}
 
-You can loop them as shown below. There are two details in each
-dictonary (1) Value - Emoji or Emoticons and (2) Location - starting
-position and the ending position of the emoji and emoticons. Below is
-the example showing how you can loop it.
+New version 2.0 of emot library return dictonary of and you can loop every data based on below example.
+Here, value, location, mean are list and flag is boolean. 
 
-    >>> text = "I love python 👨 :-) :) "
-    >>> emot.emoticons(text)
-    [{'value': ':-)', 'location': [16, 19]}, {'value': ':)', 'location': [20, 22]}]
-    >>> for data in emot.emoticons(text):
-    ...     print('value ',data['value'])
-    ...     print('starting point: ',data['location'][0])
-    ...     print('ending point: ',data['location'][1])
-    ...
-    value :-)
-    starting point:  16
-    ending point:  19
-    value :)
-    starting point:  20
-    ending point:  22
-
+    >>> text = "I love python 👨 :-)"
+    >>> ans = emot.emoticons(text)
+    >>> ans
+    {'value': [':-)'], 'location': [[16, 19]], 'mean': ['Happy face smiley'], 'flag': True}
+    >>> ans['value']
+    ':-)'
+    >>> ans['location']
+    [16, 19]
+    >>> ans['mean']
+    ['Happy face smiley']
+    >>> ans['flag']
+    True
+    
 Installation
 ------------
 
