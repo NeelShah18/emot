@@ -35,17 +35,21 @@ def emoji(string):
                     __mean.append(emo_unicode.UNICODE_EMO[ej])
                     __location.append([pos,pos])
                 except Exception as e:
+                    flag = False
                     __entities.append({"flag": False})
                     return __entities
 
     except Exception as e:
+        flag = False
         __entities.append({"flag": False})
         return __entities
+    if len(__value) < 1:
+        flag = False    
     __entities = {
         'value' : __value,
         'mean' : __mean,
         'location' : __location,
-        'flag' : True
+        'flag' : flag
     }
 
     return __entities
@@ -58,6 +62,7 @@ def emoticons(string):
         >>> {'value': [':-)'], 'location': [[16, 19]], 'mean': ['Happy face smiley'], 'flag': True}
     '''
     __entities = []
+    flag = True
     try:
         pattern = u'(' + u'|'.join(k for k in emo_unicode.EMOTICONS) + u')'
         __entities = []
@@ -72,11 +77,13 @@ def emoticons(string):
         for each in __value:
             __mean.append(emo_unicode.EMOTICONS_EMO[each])
         
+        if len(__value) < 1:
+            flag = False
         __entities = {
         'value' : __value,
         'location' : __location,
         'mean' : __mean,
-        'flag' : True
+        'flag' : flag
         }
     except Exception as e:
         __entities = [{'flag' : False}]
@@ -95,3 +102,6 @@ def about():
     text = "emot library: emoji and emoticons library for python. It return emoji or emoticons from string with location of it. \nAuthors: \n Neel Shah: neelknightme@gmail.com or https://github.com/NeelShah18 \n Subham Rohilla: kaka.shubham@gmail.com or https://github.com/kakashubham"
     print(text)
     return None
+
+if __name__ == '__main__':
+    test_emo()
