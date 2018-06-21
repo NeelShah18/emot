@@ -7,9 +7,9 @@ from emot import emo_unicode
     >>> import emot
     >>> text = "I love python 👨 :-)"
     >>> emot.emoji(text)
-    >>> [{'value': '👨', 'location': [10, 10]}]
+    >>> {'value': ['👨'], 'mean': [':man:'], 'location': [[14, 14]], 'flag': True}
     >>> emot.emoticons(text)
-    >>> [{'value': ':-)', 'location': [12, 15]}]
+    >>> {'value': [':-)'], 'location': [[16, 19]], 'mean': ['Happy face smiley'], 'flag': True}
 '''
 
 __all__ = ['emoji','emoticons']
@@ -19,25 +19,35 @@ def emoji(string):
 
         >>> text = "I love python 👨 :-)"
         >>> emot.emoji(text)
-        >>> [{'value': '👨', 'mean': ':man:', 'location': [14, 14], 'flag': True}]
+        >>> {'value': ['👨'], 'mean': [':man:'], 'location': [[14, 14]], 'flag': True}
     '''
-    __entities = []
+    __entities = {}
+    __value = []
+    __mean = []
+    __location = []
+    flag = True
     try:
         pro_string = str(string)
         for pos,ej in enumerate(pro_string):
             if ej in emo_unicode.UNICODE_EMO:
                 try:
-                    __entities.append({
-                        "value": ej,
-                        "mean" : emo_unicode.UNICODE_EMO[ej],
-                        "location": [pos,pos],
-                        "flag" : True
-                        })
+                    __value.append(ej)
+                    __mean.append(emo_unicode.UNICODE_EMO[ej])
+                    __location.append([pos,pos])
                 except Exception as e:
                     __entities.append({"flag": False})
+                    return __entities
 
     except Exception as e:
         __entities.append({"flag": False})
+        return __entities
+    __entities = {
+        'value' : __value,
+        'mean' : __mean,
+        'location' : __location,
+        'flag' : True
+    }
+
     return __entities
 
 def emoticons(string):
@@ -70,7 +80,8 @@ def emoticons(string):
         }
     except Exception as e:
         __entities = [{'flag' : False}]
-        print("No emoiticons found")
+        #print("No emoiticons found")
+        return __entities
 
     return __entities
 
@@ -84,6 +95,3 @@ def about():
     text = "emot library: emoji and emoticons library for python. It return emoji or emoticons from string with location of it. \nAuthors: \n Neel Shah: neelknightme@gmail.com or https://github.com/NeelShah18 \n Subham Rohilla: kaka.shubham@gmail.com or https://github.com/kakashubham"
     print(text)
     return None
-
-if __name__ == '__main__':
-    test_emo()
