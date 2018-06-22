@@ -1,4 +1,6 @@
-[![Downloads](http://pepy.tech/badge/emot)](http://pepy.tech/project/emot)
+[![Downloads](http://pepy.tech/badge/emot)](http://pepy.tech/project/emot) 
+
+[![Documentation Status](http://readthedocs.org/projects/emot/badge/?version=latest)](https://emot.readthedocs.io/en/latest/?badge=latest)
 
 Description of the emot library
 ===============================
