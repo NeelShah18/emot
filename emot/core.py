@@ -68,7 +68,7 @@ def emoticons(string):
         __entities = []
         __value = []
         __location = []
-        matches = re.finditer(r"%s"%pattern,str(string),re.IGNORECASE)
+        matches = re.finditer(r"%s"%pattern,str(string))
         for et in matches:
             __value.append(et.group().strip())
             __location.append([et.start(),et.end()])
