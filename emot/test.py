@@ -2,7 +2,7 @@ import core as emo
 import cProfile
 
 def test_emo():
-    test = "I love it, 👨 :-) 🏁:-) :-)🏁 :-) 🏁 <3"
+    test = "I love it, 👨 :-) 🏁:-) :-)🏁 :-) 🏁 <3 oo oO "
     print(emo.emoji(test))
     print(emo.emoticons(test))
     print(test[27:30])
