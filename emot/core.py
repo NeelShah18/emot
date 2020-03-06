@@ -86,7 +86,7 @@ def emoticons(string):
         'flag' : flag
         }
     except Exception as e:
-        __entities = [{'flag' : False}]
+        __entities = {'flag' : False}
         #print("No emoiticons found")
         return __entities
 
