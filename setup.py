@@ -7,7 +7,7 @@ from setuptools import setup
 
 setup(
     name='emot',
-    version="2.1",
+    version="2.2",
     author='Neel Shah, Subham',
     author_email='neelknightme@gmail.com, kaka.shubham@gmail.com',
     description="Emoji and Emoticons detection package for Python",
@@ -17,5 +17,5 @@ setup(
     packages=['emot'],
     url="https://github.com/NeelShah18/emo",
     zip_safe=True,
-    download_url="https://github.com/NeelShah18/emot/archive/v2.1.tar.gz",
+    download_url="https://github.com/NeelShah18/emot/archive/v2.2.tar.gz",
 )
