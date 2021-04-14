@@ -10,7 +10,11 @@ __all__ = ['EMO_UNICODE', 'UNICODE_EMO', 'EMOTICONS', 'EMOTICONS_EMO']
 
 EMOTICONS = {
     u":‑\)":"Happy face or smiley",
+    u":-\)\)":"Very Happy face or smiley",
+    u":-\)\)\)":"Very very Happy face or smiley",
     u":\)":"Happy face or smiley",
+    u":\)\)":"Very Happy face or smiley",
+    u":\)\)\)":"Very very Happy face or smiley",
     u":-\]":"Happy face or smiley",
     u":\]":"Happy face or smiley",
     u":-3":"Happy face smiley",
@@ -2619,13 +2623,20 @@ EMO_UNICODE = {
     u':zipper-mouth_face:': u'\U0001F910',
     u':zzz:': u'\U0001F4A4',
     u':Åland_Islands:': u'\U0001F1E6 \U0001F1FD',
+    u':smiling_face_with_three_hearts:': u'\U0001F970',
+    u':orange_heart:': u'U0001F9E1',
+    u':pleading_face:': u'U0001F97A',
 }
 
 UNICODE_EMO = {v: k for k, v in EMO_UNICODE.items()}
 
 EMOTICONS_EMO = {
     u":‑)":"Happy face or smiley",
+    u":-))":"Very Happy face or smiley",
+    u":-)))":"Very very Happy face or smiley",
     u":)":"Happy face or smiley",
+    u":))":"Very Happy face or smiley",
+    u":)))":"Very very Happy face or smiley",
     u":-]":"Happy face or smiley",
     u":]":"Happy face or smiley",
     u":-3":"Happy face smiley",
