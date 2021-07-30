@@ -68,6 +68,7 @@ def emoticons(string):
         __entities = []
         __value = []
         __location = []
+
         matches = re.finditer(r"%s"%pattern,str(string))
         for et in matches:
             __value.append(et.group().strip())
@@ -75,7 +76,16 @@ def emoticons(string):
             
         __mean = []
         for each in __value:
-            __mean.append(emo_unicode.EMOTICONS_EMO[each])
+            __mean.append(emo_unicode.EMOTICONS_EMO.get(each))
+            
+        try:
+            while True:
+                ix = __mean.index(None)
+                __mean.pop(ix)
+                __value.pop(ix)
+                __location.pop(ix)
+        except ValueError as e:
+            pass
         
         if len(__value) < 1:
             flag = False
