@@ -1,5 +1,5 @@
 include LICENSE.txt
 include MANIFEST.in
-include README.rst
+include README.md
 include setup.py
 include setup.cfg

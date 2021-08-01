@@ -11,15 +11,16 @@ emot terminal output for Python.
 
 """
 
-from emot.core import emoji
-from emot.core import emoticons
-from emot.emo_unicode import EMO_UNICODE
-from emot.emo_unicode import UNICODE_EMO
-from emot.emo_unicode import EMOTICONS
+from emot.core import emot
+from emot.emo_unicode import EMOJI_UNICODE
+from emot.emo_unicode import UNICODE_EMOJI
+from emot.emo_unicode import EMOTICONS_EMO
+from emot.emo_unicode import EMOJI_ALIAS_UNICODE
+from emot.emo_unicode import UNICODE_EMOJI_ALIAS
 
-__version__ = '0.0.1'
-__author__ = 'Neel Shah and Shubham'
-__email__ = 'neelknightme@gmail.com and kaka.shubham@gmail.com'
+__version__ = '3.0.0'
+__author__ = 'Neel Shah'
+__email__ = 'neelknightme@gmail.com'
 __source__ = 'https://github.com/NeelShah18/emot'
 __license__ = '''
 
