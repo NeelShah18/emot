@@ -17,5 +17,5 @@ setup(
     packages=['emot'],
     url="https://github.com/NeelShah18/emo",
     zip_safe=True,
-    download_url="https://github.com/NeelShah18/emot/archive/v2.2.tar.gz",
+    download_url="https://github.com/NeelShah18/emot/archive/refs/tags/v3.0.tar.gz",
 )
