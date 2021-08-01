@@ -35,6 +35,47 @@ Working
 
 The Emot library takes a string/list of string as an input and returns a dictonary.
 
+There are one class name emot containing four different function.
+
+emot.emoji:
+
+- Input: It has one input: string
+- Output: It will return dictionary with 4 different value: dict
+  - value = list of emojis
+  - location = list of location list of emojis
+  - mean = list of meaning
+  - flag = True/False. False means library didn't find anything and True means we find something.
+
+emot.emoticons
+
+- Input: It has one input: string
+- Output: It will return dictionary with 4 different value: dict
+  - value = list of emoticons
+  - location = list of location list of emoticons
+  - mean = list of meaning
+  - flag = True/False. False means library didn't find anything and True means we find something.
+
+emot.bulk_emoji
+
+- Input: Two input: List of string and CPU cores pool: list[], int
+  - By default CPU cores pool value is half of total available cores: multiprocessing.cpu_count()/2 
+- Output: It will return **list of dictionary** with 4 different value: list of dict
+  - value = list of emojis
+  - location = list of location list of emojis
+  - mean = list of meaning
+  - flag = True/False. False means library didn't find anything and True means we find something.
+
+emot.bulk_emoticons
+
+- Input: Two input: List of string and CPU cores pool: list[], int
+  - By default CPU cores pool value is half of total available cores: multiprocessing.cpu_count()/2 
+- Output: It will return **list of dictionary** with 4 different value: list of dict
+  - value = list of emoticons
+  - location = list of location list of emoticons
+  - mean = list of meaning
+  - flag = True/False. False means library didn't find anything and True means we find something.
+
+
 Example
 -------
 
@@ -47,7 +88,30 @@ Example
     >>> emot_obj.emoticons(test) >>> {'value': [':-)', ':-(', ':-)))'], 'location': [[20, 23], [24, 27], [28, 33]], 
     'mean': ['Happy face smiley', 'Frown, sad, andry or pouting', 'Very very Happy face or smiley'], 'flag': True} 
 
+    Running bulk string emoji and emoticons detection. When user has access multiple processing cores.
     
+    >>> import emot 
+    >>> emot_obj = emot.emot() 
+    >>> bulk_test = ["I love python ☮ 🙂 ❤ :-) :-( :-)))", "I love python 
+    🙂 ❤ :-) :-( :-)))", "I love python ☮ ❤ :-) :-( :-)))", "I love python ☮ 🙂 :-( :-)))"] 
+    >>>
+    >>> emot_obj.bulk_emoji(bulk_test) 
+    >>> [{'value': ['☮', '🙂', '❤'], 'location': [[14, 15], [16, 17], [18, 19]], 
+        'mean': [':peace_symbol:', ':slightly_smiling_face:', ':red_heart:'], 'flag': True}, {'value': ['🙂', '❤'], 
+        'location': [[14, 15], [16, 17]], 'mean': [':slightly_smiling_face:', ':red_heart:'], 'flag': True}, {'value': [
+        '☮', '❤'], 'location': [[14, 15], [16, 17]], 'mean': [':peace_symbol:', ':red_heart:'], 'flag': True}, 
+        {'value': ['☮', '🙂'], 'location': [[14, 15], [16, 17]], 'mean': [':peace_symbol:', ':slightly_smiling_face:'], 
+        'flag': True}] 
+    >>>
+    >>> emot_obj.bulk_emoticons(bulk_test)
+    >>> [{'value': [':-)', ':-(', ':-)))'], 'location': [[20, 23], [24, 27], [28, 33]], 'mean': ['Happy face smiley', 
+        'Frown, sad, andry or pouting', 'Very very Happy face or smiley'], 'flag': True}, {'value': [':-)', ':-(', ':-)))'], 
+        'location': [[18, 21], [22, 25], [26, 31]], 'mean': ['Happy face smiley', 'Frown, sad, andry or pouting', 'Very 
+        very Happy face or smiley'], 'flag': True}, {'value': [':-)', ':-(', ':-)))'], 'location': [[18, 21], [22, 25], 
+        [26, 31]], 'mean': ['Happy face smiley', 'Frown, sad, andry or pouting', 'Very very Happy face or smiley'], 
+        'flag': True}, {'value': [':-(', ':-)))'], 'location': [[18, 21], [22, 27]], 'mean': ['Frown, sad, andry or 
+        pouting', 'Very very Happy face or smiley'], 'flag': True}]
+
 Installation
 ------------
 

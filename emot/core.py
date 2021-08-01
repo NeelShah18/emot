@@ -2,6 +2,7 @@ try:
     import emo_unicode
     import re
     import pattern_generator
+    import multiprocessing as mp
 except Exception as E:
     print("Issue with loading of the library: " + str(E))
 
@@ -15,6 +16,30 @@ except Exception as E:
     ':slightly_smiling_face:', ':red_heart:'], 'flag': True} 
     >>> emot_obj.emoticons(test) >>> {'value': [':-)', ':-(', ':-)))'], 'location': [[20, 23], [24, 27], [28, 33]], 
     'mean': ['Happy face smiley', 'Frown, sad, andry or pouting', 'Very very Happy face or smiley'], 'flag': True} 
+    
+    Running bulk string emoji and emoticons detection. When user has access multiple processing cores.
+    
+    >>> import emot 
+    >>> emot_obj = emot.emot() 
+    >>> bulk_test = ["I love python ☮ 🙂 ❤ :-) :-( :-)))", "I love python 
+    🙂 ❤ :-) :-( :-)))", "I love python ☮ ❤ :-) :-( :-)))", "I love python ☮ 🙂 :-( :-)))"] 
+    >>>
+    >>> emot_obj.bulk_emoji(bulk_test) 
+    >>> [{'value': ['☮', '🙂', '❤'], 'location': [[14, 15], [16, 17], [18, 19]], 
+        'mean': [':peace_symbol:', ':slightly_smiling_face:', ':red_heart:'], 'flag': True}, {'value': ['🙂', '❤'], 
+        'location': [[14, 15], [16, 17]], 'mean': [':slightly_smiling_face:', ':red_heart:'], 'flag': True}, {'value': [
+        '☮', '❤'], 'location': [[14, 15], [16, 17]], 'mean': [':peace_symbol:', ':red_heart:'], 'flag': True}, 
+        {'value': ['☮', '🙂'], 'location': [[14, 15], [16, 17]], 'mean': [':peace_symbol:', ':slightly_smiling_face:'], 
+        'flag': True}] 
+    >>>
+    >>> emot_obj.bulk_emoticons(bulk_test)
+    >>> [{'value': [':-)', ':-(', ':-)))'], 'location': [[20, 23], [24, 27], [28, 33]], 'mean': ['Happy face smiley', 
+        'Frown, sad, andry or pouting', 'Very very Happy face or smiley'], 'flag': True}, {'value': [':-)', ':-(', ':-)))'], 
+        'location': [[18, 21], [22, 25], [26, 31]], 'mean': ['Happy face smiley', 'Frown, sad, andry or pouting', 'Very 
+        very Happy face or smiley'], 'flag': True}, {'value': [':-)', ':-(', ':-)))'], 'location': [[18, 21], [22, 25], 
+        [26, 31]], 'mean': ['Happy face smiley', 'Frown, sad, andry or pouting', 'Very very Happy face or smiley'], 
+        'flag': True}, {'value': [':-(', ':-)))'], 'location': [[18, 21], [22, 27]], 'mean': ['Frown, sad, andry or 
+        pouting', 'Very very Happy face or smiley'], 'flag': True}]
 
 '''
 
@@ -89,7 +114,7 @@ class emot:
         return __entities
 
     def emoticons(self, string):
-        """emot.emoji is use to detect emoticon from text
+        """emot.emoticons is use to detect emoticon from text
 
             >>> import emot
             >>> emot_obj = emot.emot()
@@ -125,12 +150,64 @@ class emot:
 
         return __entities
 
+    def bulk_emoji(self, string_list, multiprocessing_pool_capacity=int(mp.cpu_count()/2)):
+        """emot.bult_emoji is use to detect emoticon from list of string
+
+                    Here, we have two input for bulk_emoticons: list of string and multiprocessing_pool_capacity.
+                    list of string = [string1, string2, ...]
+                    multiprocessing_pool_capacity = multi processing pool user want to provide for the computation.
+                        By defaul the pool capacity is half of the total cores in the system.
+
+                    >>> import emot
+                    >>> emot_obj = emot.emot()
+                    >>> bulk_test = ["I love python ☮ 🙂 ❤ :-) :-( :-)))", "I love python 🙂 ❤ :-) :-( :-)))", "I love
+                        python ☮ ❤ :-) :-( :-)))", "I love python ☮ 🙂 :-( :-)))"]
+                    >>> emot_obj.bulk_emoji(bulk_test, multiprocessing_pool_capacity=2)
+                    >>> [{'value': ['☮', '🙂', '❤'], 'location': [[14, 15], [16, 17], [18, 19]],
+                        'mean': [':peace_symbol:', ':slightly_smiling_face:', ':red_heart:'], 'flag': True}, {'value': ['🙂', '❤'],
+                        'location': [[14, 15], [16, 17]], 'mean': [':slightly_smiling_face:', ':red_heart:'], 'flag': True}, {'value': [
+                        '☮', '❤'], 'location': [[14, 15], [16, 17]], 'mean': [':peace_symbol:', ':red_heart:'], 'flag': True},
+                        {'value': ['☮', '🙂'], 'location': [[14, 15], [16, 17]], 'mean': [':peace_symbol:', ':slightly_smiling_face:'],
+                        'flag': True}]
+                """
+        processor_pool = mp.Pool(multiprocessing_pool_capacity)
+        __entities = processor_pool.map(self.emoji, string_list)
+        return __entities
+
+    def bulk_emoticons(self, string_list, multiprocessing_pool_capacity=int(mp.cpu_count()/2)):
+        """emot.bult_emoticons is use to detect emoticon from list of string
+
+            Here, we have two input for bulk_emoticons: list of string and multiprocessing_pool_capacity.
+            list of string = [string1, string2, ...]
+            multiprocessing_pool_capacity = multi processing pool user want to provide for the computation.
+                By defaul the pool capacity is half of the total cores in the system.
+
+            >>> import emot
+            >>> emot_obj = emot.emot()
+            >>> bulk_test = ["I love python ☮ 🙂 ❤ :-) :-( :-)))", "I love python 🙂 ❤ :-) :-( :-)))", "I love python
+                ☮ ❤ :-) :-( :-)))", "I love python ☮ 🙂 :-( :-)))"]
+            >>> emot_obj.bulk_emoticons(bulk_test, multiprocessing_pool_capacity=2)
+            >>> [{'value': [':-)', ':-(', ':-)))'], 'location': [[20, 23], [24, 27], [28, 33]], 'mean': ['Happy face smiley',
+                'Frown, sad, andry or pouting', 'Very very Happy face or smiley'], 'flag': True}, {'value': [':-)', ':-(', ':-)))'],
+                'location': [[18, 21], [22, 25], [26, 31]], 'mean': ['Happy face smiley', 'Frown, sad, andry or pouting', 'Very
+                very Happy face or smiley'], 'flag': True}, {'value': [':-)', ':-(', ':-)))'], 'location': [[18, 21], [22, 25],
+                [26, 31]], 'mean': ['Happy face smiley', 'Frown, sad, andry or pouting', 'Very very Happy face or smiley'],
+                'flag': True}, {'value': [':-(', ':-)))'], 'location': [[18, 21], [22, 27]], 'mean': ['Frown, sad, andry or
+                pouting', 'Very very Happy face or smiley'], 'flag': True}]
+        """
+        processor_pool = mp.Pool(multiprocessing_pool_capacity)
+        __entities = processor_pool.map(self.emoticons, string_list)
+        return __entities
+
 
 def test_emo():
     emot_obj = emot()
     test = "I love python ☮ 🙂 ❤ :-) :-( :-)))"
+    bulk_test = ["I love python ☮ 🙂 ❤ :-) :-( :-)))", "I love python 🙂 ❤ :-) :-( :-)))", "I love python ☮ ❤ :-) :-( :-)))", "I love python ☮ 🙂 :-( :-)))"]
     print(emot_obj.emoticons(test))
     print(emot_obj.emoji(test))
+    print(emot_obj.bulk_emoji(bulk_test))
+    print(emot_obj.bulk_emoticons(bulk_test))
     return None
 
 
