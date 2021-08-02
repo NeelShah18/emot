@@ -1,7 +1,6 @@
 try:
-    import emo_unicode
+    from . import emo_unicode, pattern_generator
     import re
-    import pattern_generator
     import multiprocessing as mp
 except Exception as E:
     print("Issue with loading of the library: " + str(E))
