@@ -7,7 +7,7 @@ from setuptools import setup
 
 setup(
     name='emot',
-    version="3.0",
+    version="3.1",
     author='Neel Shah',
     author_email='neelknightme@gmail.com',
     description="Emoji and Emoticons detection package for Python",

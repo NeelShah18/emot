@@ -1,13 +1,13 @@
 [![Downloads](http://pepy.tech/badge/emot)](http://pepy.tech/project/emot) 
 
-Description of the emot:3.0 library
+Description of the emot:3.1 library
 ===============================
 
 Emot is a python library to extract the emojis and emoticons from a
 text(string). All the emojis and emoticons are taken from a reliable
 source details are listed in source section.
 
-Emot 3.0 release moto is: high-performance detection library for data-science specially for large scale datasets of text.
+Emot 3.1 release moto is: high-performance detection library for data-science specially for large scale datasets of text.
 
 Emot use advance dynamic pattern generation. It means everytime when you create object it generate pattern
 based on the database(emo_unicode.py). You can add/delete/modify that file under library to create other dynamic pattern.
@@ -73,14 +73,11 @@ emot.bulk_emoticons
   - mean = list of meaning
   - flag = True/False. False means library didn't find anything and True means we find something.
 
-Note: Don't forgot to load **import multiprocessing as mp**
-
 
 Example
 -------
 
     >>> import emot 
-    >>> import multiprocessing as mp
     >>> emot_obj = emot.core.emot() 
     >>> text = "I love python ☮ 🙂 ❤ :-) :-( :-)))" 
     >>> emot_obj.emoji(test) 
@@ -92,7 +89,6 @@ Example
     Running bulk string emoji and emoticons detection. When user has access multiple processing cores.
     
     >>> import emot 
-    >>> import multiprocessing as mp
     >>> emot_obj = emot.core.emot() 
     >>> bulk_test = ["I love python ☮ 🙂 ❤ :-) :-( :-)))", "I love python 
     🙂 ❤ :-) :-( :-)))", "I love python ☮ ❤ :-) :-( :-)))", "I love python ☮ 🙂 :-( :-)))"] 
