@@ -73,12 +73,15 @@ emot.bulk_emoticons
   - mean = list of meaning
   - flag = True/False. False means library didn't find anything and True means we find something.
 
+Note: Don't forgot to load **import multiprocessing as mp**
+
 
 Example
 -------
 
     >>> import emot 
-    >>> emot_obj = emot.emot() 
+    >>> import multiprocessing as mp
+    >>> emot_obj = emot.core.emot() 
     >>> text = "I love python ☮ 🙂 ❤ :-) :-( :-)))" 
     >>> emot_obj.emoji(test) 
     >>> {'value': ['☮', '🙂', '❤'], 'location': [[14, 15], [16, 17], [18, 19]], 'mean': [':peace_symbol:', 
@@ -89,7 +92,8 @@ Example
     Running bulk string emoji and emoticons detection. When user has access multiple processing cores.
     
     >>> import emot 
-    >>> emot_obj = emot.emot() 
+    >>> import multiprocessing as mp
+    >>> emot_obj = emot.core.emot() 
     >>> bulk_test = ["I love python ☮ 🙂 ❤ :-) :-( :-)))", "I love python 
     🙂 ❤ :-) :-( :-)))", "I love python ☮ ❤ :-) :-( :-)))", "I love python ☮ 🙂 :-( :-)))"] 
     >>>
