@@ -80,7 +80,7 @@ Example
     >>> import emot 
     >>> emot_obj = emot.core.emot() 
     >>> text = "I love python ☮ 🙂 ❤ :-) :-( :-)))" 
-    >>> emot_obj.emoji(test) 
+    >>> emot_obj.emoji(text) 
     >>> {'value': ['☮', '🙂', '❤'], 'location': [[14, 15], [16, 17], [18, 19]], 'mean': [':peace_symbol:', 
     ':slightly_smiling_face:', ':red_heart:'], 'flag': True} 
     >>> emot_obj.emoticons(test) >>> {'value': [':-)', ':-(', ':-)))'], 'location': [[20, 23], [24, 27], [28, 33]], 
