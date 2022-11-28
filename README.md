@@ -1,5 +1,4 @@
-[![Downloads](http://pepy.tech/badge/emot)](http://pepy.tech/project/emot) [![GitHub issues](https://img.shields.io/github/issues/NeelShah18/emot)](https://github.com/NeelShah18/emot/issues) [![GitHub forks](https://img.shields.io/github/forks/NeelShah18/emot)](https://github.com/NeelShah18/emot/network) [![GitHub stars](https://img.shields.io/github/stars/NeelShah18/emot)](https://github.com/NeelShah18/emot/stargazers) [![GitHub license](https://img.shields.io/github/license/NeelShah18/emot)](https://github.com/NeelShah18/emot/blob/master/LICENSE)
-
+[![Downloads](http://pepy.tech/badge/emot)](http://pepy.tech/project/emot) [![GitHub issues](https://img.shields.io/github/issues/NeelShah18/emot)](https://github.com/NeelShah18/emot/issues) [![GitHub forks](https://img.shields.io/github/forks/NeelShah18/emot)](https://github.com/NeelShah18/emot/network) [![GitHub stars](https://img.shields.io/github/stars/NeelShah18/emot)](https://github.com/NeelShah18/emot/stargazers)
 Description of the emot:3.1 library
 ===============================
 
