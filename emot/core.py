@@ -15,7 +15,7 @@ except Exception as E:
     >>> {'value': ['☮', '🙂', '❤'], 'location': [[14, 15], [16, 17], [18, 19]], 'mean': [':peace_symbol:', 
     ':slightly_smiling_face:', ':red_heart:'], 'flag': True} 
     >>> emot_obj.emoticons(test) >>> {'value': [':-)', ':-(', ':-)))'], 'location': [[20, 23], [24, 27], [28, 33]], 
-    'mean': ['Happy face smiley', 'Frown, sad, andry or pouting', 'Very very Happy face or smiley'], 'flag': True} 
+    'mean': ['Happy face smiley', 'Frown, sad, angry or pouting', 'Very very Happy face or smiley'], 'flag': True} 
     
     Running bulk string emoji and emoticons detection. When user has access multiple processing cores.
     
@@ -34,11 +34,11 @@ except Exception as E:
     >>>
     >>> emot_obj.bulk_emoticons(bulk_test)
     >>> [{'value': [':-)', ':-(', ':-)))'], 'location': [[20, 23], [24, 27], [28, 33]], 'mean': ['Happy face smiley', 
-        'Frown, sad, andry or pouting', 'Very very Happy face or smiley'], 'flag': True}, {'value': [':-)', ':-(', ':-)))'], 
-        'location': [[18, 21], [22, 25], [26, 31]], 'mean': ['Happy face smiley', 'Frown, sad, andry or pouting', 'Very 
+        'Frown, sad, angry or pouting', 'Very very Happy face or smiley'], 'flag': True}, {'value': [':-)', ':-(', ':-)))'], 
+        'location': [[18, 21], [22, 25], [26, 31]], 'mean': ['Happy face smiley', 'Frown, sad, angry or pouting', 'Very 
         very Happy face or smiley'], 'flag': True}, {'value': [':-)', ':-(', ':-)))'], 'location': [[18, 21], [22, 25], 
-        [26, 31]], 'mean': ['Happy face smiley', 'Frown, sad, andry or pouting', 'Very very Happy face or smiley'], 
-        'flag': True}, {'value': [':-(', ':-)))'], 'location': [[18, 21], [22, 27]], 'mean': ['Frown, sad, andry or 
+        [26, 31]], 'mean': ['Happy face smiley', 'Frown, sad, angry or pouting', 'Very very Happy face or smiley'], 
+        'flag': True}, {'value': [':-(', ':-)))'], 'location': [[18, 21], [22, 27]], 'mean': ['Frown, sad, angry or 
         pouting', 'Very very Happy face or smiley'], 'flag': True}]
 
 '''
@@ -121,7 +121,7 @@ class emot:
             >>> text = "I love python ☮ 🙂 ❤ :-) :-( :-)))"
             >>> emot_obj.emoji(text)
             >>> emot_obj.emoticons(text) >>> {'value': [':-)', ':-(', ':-)))'], 'location': [[20, 23], [24, 27], [28, 33]],
-                'mean': ['Happy face smiley', 'Frown, sad, andry or pouting', 'Very very Happy face or smiley'], 'flag': True}
+                'mean': ['Happy face smiley', 'Frown, sad, angry or pouting', 'Very very Happy face or smiley'], 'flag': True}
         """
         __entities = {}
         __value = []
@@ -188,11 +188,11 @@ class emot:
                 ☮ ❤ :-) :-( :-)))", "I love python ☮ 🙂 :-( :-)))"]
             >>> emot_obj.bulk_emoticons(bulk_test, multiprocessing_pool_capacity=2)
             >>> [{'value': [':-)', ':-(', ':-)))'], 'location': [[20, 23], [24, 27], [28, 33]], 'mean': ['Happy face smiley',
-                'Frown, sad, andry or pouting', 'Very very Happy face or smiley'], 'flag': True}, {'value': [':-)', ':-(', ':-)))'],
-                'location': [[18, 21], [22, 25], [26, 31]], 'mean': ['Happy face smiley', 'Frown, sad, andry or pouting', 'Very
+                'Frown, sad, angry or pouting', 'Very very Happy face or smiley'], 'flag': True}, {'value': [':-)', ':-(', ':-)))'],
+                'location': [[18, 21], [22, 25], [26, 31]], 'mean': ['Happy face smiley', 'Frown, sad, angry or pouting', 'Very
                 very Happy face or smiley'], 'flag': True}, {'value': [':-)', ':-(', ':-)))'], 'location': [[18, 21], [22, 25],
-                [26, 31]], 'mean': ['Happy face smiley', 'Frown, sad, andry or pouting', 'Very very Happy face or smiley'],
-                'flag': True}, {'value': [':-(', ':-)))'], 'location': [[18, 21], [22, 27]], 'mean': ['Frown, sad, andry or
+                [26, 31]], 'mean': ['Happy face smiley', 'Frown, sad, angry or pouting', 'Very very Happy face or smiley'],
+                'flag': True}, {'value': [':-(', ':-)))'], 'location': [[18, 21], [22, 27]], 'mean': ['Frown, sad, angry or
                 pouting', 'Very very Happy face or smiley'], 'flag': True}]
         """
         processor_pool = mp.Pool(multiprocessing_pool_capacity)
