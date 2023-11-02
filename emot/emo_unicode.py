@@ -3,7 +3,6 @@
 """
 Emoticons and Emoji data dictonary
 """
-
 __all__ = ['EMOJI_UNICODE', 'UNICODE_EMOJI', 'EMOJI_ALIAS_UNICODE', 'UNICODE_EMOJI_ALIAS', 'EMOTICONS_EMO']
 
 EMOTICONS_EMO = {
